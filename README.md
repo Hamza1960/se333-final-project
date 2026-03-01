@@ -41,10 +41,10 @@ Open the repo in VS Code, pop open the command palette (`Ctrl+Shift+P`), and run
 
 ### 3. Run the Java Stuff
 
-Go to the `se333-demo` folder and make sure it builds:
-```bash
+Go to the `se333-demo` folder and run this exact command to start the build:
+```powershell
 cd se333-demo
-mvn clean test
+& 'C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.2.3\plugins\maven\lib\maven3\bin\mvn.cmd' clean test
 ```
 
 ## The Custom Tools I Added (Phase 5)
@@ -88,8 +88,6 @@ All tools are exposed via the `se333-mcp-server` and are accessible through the 
 - **Parameters**: `java_source` (Contents of a Java file).
 - **Returns**: List of detected smells (Magic numbers, division by zero risks, etc.).
 
----
-
 ## Troubleshooting & FAQ
 
 **Q: The agent says it can't find the `jacoco.xml` file.**
@@ -104,8 +102,6 @@ All tools are exposed via the `se333-mcp-server` and are accessible through the 
 **Q: Why stop at 98.1% coverage?**
 - **A**: In `Calculator.java`, some intentional bugs like absolute value of `Integer.MIN_VALUE` or specific prime number edge cases are designed to show how the agent handles "impossible" or "hard" paths. 100% is the goal, but 98%+ is elite for automated generation.
 
----
-
 ## Feedback Loop & Iteration
 
 This project isn't just a static script. It implements a **Recursive Feedback Loop**:
@@ -113,8 +109,6 @@ This project isn't just a static script. It implements a **Recursive Feedback Lo
 2. **Execute**: Agent writes a test targeting a specific missing line.
 3. **Verify**: Agent runs `mvn test`. If it fails, the agent reads the error, uses `detect_code_smells` to help debug, and fixes the test.
 4. **Iterate**: This process repeats automatically until the coverage graph stabilizes.
-
----
 
 ## Technical Credits
 - **Course**: SE333 - Software Testing

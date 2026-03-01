@@ -12,7 +12,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from fastmcp import FastMCP
 
-mcp = FastMCP("SE333 Testing Agent 🧪")
+mcp = FastMCP("SE333 Testing Agent ")
 
 
 # ─── Tool 1: Basic arithmetic (Phase 1 demo) ───────────────────────────────
